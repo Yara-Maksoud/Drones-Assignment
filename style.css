@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for the header's h1 element  */
+header h1 {
+    margin: 2% auto;
+    text-align: center;
+}
+
+/* Adds a solid black border below the flexbox-section */
+.flexbox-section {
+    border-bottom: 2px solid black;
+}
+
+/* Styling h2 for flexbox-section and grid-section */
+.flexbox-section,
+.grid-section h2 {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 1%;
+}
+
+/* Removes bullet points from the list */
+.flexbox-list,
+.grid-list {
+    list-style: none;
+}
+
+/* Apply flexbox layout for the flexbox-list */
+.flexbox-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Styling every items within flexbox-list and grid-list  */
+.flexbox-item,
+.grid-item {
+    text-align: center;
+    margin: 1% 0;
+    padding: 20px;
+}
+
+/* General styling for h3 elements */
+h3 {
+    text-align: center;
+}
+
+/* General styling for image width */
+img {
+    width: 200px;
+}
+
+/* Apply grid layout for the grid-list */
+.grid-list {
+    display: grid;
+}
+
+/* Desktops styling */
+@media screen and (min-width: 1024px) {
+
+    /* The first flexbox item will take up 50% of the container width */
+    .flexbox-item:first-child {
+        width: 50%;
+    }
+
+    /* Other flexbox items will take up 25% of the container width */
+    .flexbox-item {
+        width: 25%;
+    }
+
+    /* Defines 4 columns with equal width */
+    .grid-list {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* The first grid item will span 2 columns  */
+    .grid-item:first-child {
+        grid-column: 1/3;
+    }
+}
+
+/* Tablets styling*/
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+
+    /* The first two flexbox item will take up 50% of the container width */
+    .flexbox-item:first-child,
+    .flexbox-item:nth-child(2) {
+        width: 50%;
+    }
+
+    /* Other flexbox items will take up 33% of the container width */
+    .flexbox-item {
+        width: 33%;
+    }
+
+    /* Defines 3 columns with equal width */
+    .grid-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* The first grid item will span 2 columns */
+    .grid-item:first-child {
+        grid-column: 1/3;
+    }
+}
+
+/* Mobile styling */
+@media screen and (max-width:600px) {
+
+    /* Every items will take up 100% of the container width */
+    .flexbox-item {
+        width: 100%;
+    }
+
+    /* Defines 1 column */
+    .grid-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
